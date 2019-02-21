@@ -19,28 +19,28 @@
 # parameters.
 
 APR_MAJOR_VERSION="1"
-APR_DOTTED_VERSION="1.6.3"
+APR_DOTTED_VERSION="1.5.2"
 
-prefix="/home/conan/.conan/data/apache-apr/1.6.3/jgsogo/stable/package/6ae331b72e7e265ca2a3d1d8246faf73aa030238"
-exec_prefix="${prefix}"
+prefix=""
+exec_prefix="${prefix}/usr"
 bindir="${exec_prefix}/bin"
-libdir="${exec_prefix}/lib"
-datarootdir="${prefix}"
-datadir="${prefix}"
-installbuilddir="${prefix}/build-1"
-includedir="${prefix}/include/apr-${APR_MAJOR_VERSION}"
+libdir="/usr/lib/aarch64-linux-gnu"
+datarootdir="${exec_prefix}/share/apr"
+datadir="${exec_prefix}/share/apr"
+installbuilddir="/usr/share/apr-1.0/build"
+includedir="/usr/include/apr-1.0"
 
-CC="/usr/bin/gcc-7"
-CPP="/usr/bin/gcc-7 -E"
+CC="aarch64-linux-gnu-gcc"
+CPP="aarch64-linux-gnu-gcc -E"
 SHELL="/bin/bash"
 CPPFLAGS=" -DLINUX -D_REENTRANT -D_GNU_SOURCE"
 CFLAGS=" -pthread"
 LDFLAGS=""
-LIBS="-lrt -lcrypt  -lpthread -ldl"
+LIBS=""
 EXTRA_INCLUDES=""
 SHLIBPATH_VAR="LD_LIBRARY_PATH"
-APR_SOURCE_DIR="/home/conan/.conan/data/apache-apr/1.6.3/jgsogo/stable/build/6ae331b72e7e265ca2a3d1d8246faf73aa030238/apr-1.6.3"
-APR_BUILD_DIR="/home/conan/.conan/data/apache-apr/1.6.3/jgsogo/stable/build/6ae331b72e7e265ca2a3d1d8246faf73aa030238"
+APR_SOURCE_DIR="$(cd /usr/share/apr-1.0/build/.. ; pwd)"
+APR_BUILD_DIR="/build/apr-oonXxO/apr-1.5.2/debian/build"
 APR_SO_EXT="lo"
 APR_LIB_TARGET="-rpath \$(libdir) \$(OBJECTS)"
 APR_LIBNAME="apr-${APR_MAJOR_VERSION}"
@@ -223,11 +223,7 @@ while test $# -gt 0; do
     exit 0
     ;;
     --apr-libtool)
-    if test "$location" = "installed"; then
-        echo "${installbuilddir}/libtool"
-    else
-        echo "$APR_BUILD_DIR/libtool"
-    fi
+        echo "$installbuilddir/libtool"
     exit 0
     ;;
     --help)
