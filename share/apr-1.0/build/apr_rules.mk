@@ -30,7 +30,7 @@ top_builddir=/usr/share/apr-1.0/build
 
 # Some layouts require knowing what version we are at.
 APR_MAJOR_VERSION=1
-APR_DOTTED_VERSION=1.5.2
+APR_DOTTED_VERSION=1.6.3
 
 CC=aarch64-linux-gnu-gcc
 RM=rm
@@ -41,8 +41,8 @@ LIBTOOL=$(SHELL) $(apr_builddir)/libtool
 # compilation and linking flags that are supposed to be set only by the user.
 # configure adds to them for tests, but we restore them at the end.
 #
-CFLAGS?=-g -O2 -fstack-protector-strong -Wformat -Werror=format-security
-CPPFLAGS?=-D_FORTIFY_SOURCE=2
+CFLAGS?=-g -O2 -fdebug-prefix-map=/build/apr-v_IP5o/apr-1.6.3=. -fstack-protector-strong -Wformat -Werror=format-security
+CPPFLAGS?=-Wdate-time -D_FORTIFY_SOURCE=2
 LDFLAGS?=-Wl,-Bsymbolic-functions -Wl,-z,relro
 LIBS?=
 DEFS=-DHAVE_CONFIG_H

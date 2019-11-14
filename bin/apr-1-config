@@ -19,7 +19,7 @@
 # parameters.
 
 APR_MAJOR_VERSION="1"
-APR_DOTTED_VERSION="1.5.2"
+APR_DOTTED_VERSION="1.6.3"
 
 prefix=""
 exec_prefix="${prefix}/usr"
@@ -40,7 +40,7 @@ LIBS=""
 EXTRA_INCLUDES=""
 SHLIBPATH_VAR="LD_LIBRARY_PATH"
 APR_SOURCE_DIR="$(cd /usr/share/apr-1.0/build/.. ; pwd)"
-APR_BUILD_DIR="/build/apr-oonXxO/apr-1.5.2/debian/build"
+APR_BUILD_DIR="/build/apr-v_IP5o/apr-1.6.3/debian/build"
 APR_SO_EXT="lo"
 APR_LIB_TARGET="-rpath \$(libdir) \$(OBJECTS)"
 APR_LIBNAME="apr-${APR_MAJOR_VERSION}"
